@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "React Content Script",
+  "version": "0.1",
+  "permissions": [
+    "tabs","storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.twilio.com/console/studio/flows/*"],
+      "css": ["/static/css/main.css"],
+      "js": ["/static/js/main.js"]
+    },
+    {
+      "matches": [
+          "https://www.twilio.com/console/studio/flows/*/revisions"
+      ],
+      "js": ["index.js"]
+    },
+    {
+      "matches": [
+          "https://www.twilio.com/console/project/users"
+      ],
+      "js": ["users.js"]
+    }
+  ]
+}
